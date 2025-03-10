@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 200px 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu .navbar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    color: #303030;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.menu .navbar ul li a:hover {
+    color: #FF9F0D;
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permite que los elementos se adapten mejor en pantallas pequeñas */
+}
+
+.image-section {
+    flex: 1;
+}
+
+.image-section {
+    width: 50%;
+    text-align: center;
+}
+
+.image-section img#main-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.details-section {
+    width: 45%;
+}
+
+
+.details-section h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #303030;
+}
+
+.price {
+    font-size: 1.5em;
+    color: #4CAF50;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.details-section p {
+    font-size: 16px;
+    color: #545454;
+    margin-bottom: 15px;
+}
+
+select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #FF9F0D;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #FF9F0D;
+}
+
+.bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background-color: #FF9F0D;
+    border-radius: 50%;
+    z-index: -1;
+}
+.quantity-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.Sofi {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.thumbnails img {
+    width: 110px; /* Ajusta el tamaño de las miniaturas */
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.thumbnails img.thumbnail {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnails img.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* Para mejorar el diseño en móviles */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .thumbnails img {
+        width: 60px; /* Reducimos el tamaño de las miniaturas en pantallas pequeñas */
+    }
+}
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Efecto de escala para miniaturas al hacer clic */
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.active-thumbnail {
+    transform: scale(1.2);
+    border: 2px solid #FF9F0D;
+    border-radius: 8px;
+}

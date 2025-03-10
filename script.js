@@ -33,3 +33,46 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.querySelectorAll('.thumbnails img').forEach(img => {
+    img.addEventListener('click', function() {
+        document.getElementById('main-image').src = this.src;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const mainImage = document.getElementById("main-image");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener("click", function() {
+            mainImage.src = this.src;
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const mainImage = document.getElementById("main-image");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener("click", function() {
+            // Agregar clase de animación
+            mainImage.classList.add("fade-in");
+
+            // Cambiar la imagen principal
+            mainImage.src = this.src;
+
+            // Remover la clase después de la animación (0.5s)
+            setTimeout(() => {
+                mainImage.classList.remove("fade-in");
+            }, 500);
+
+            // Remover la clase activa de todas las miniaturas
+            thumbnails.forEach(img => img.classList.remove("active-thumbnail"));
+
+            // Agregar clase activa a la miniatura seleccionada
+            this.classList.add("active-thumbnail");
+        });
+    });
+});
